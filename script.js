@@ -1,36 +1,9 @@
-// Mobile menu toggle
+window.addEventListener("scroll", function(){
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+const hero = document.querySelector(".hero");
 
-menuToggle.addEventListener("click", () => {
+let scroll = window.pageYOffset;
 
-navLinks.classList.toggle("active");
-
-});
-
-
-// Smooth scroll for button
-
-document.getElementById("learnBtn").addEventListener("click", () => {
-
-document.getElementById("about").scrollIntoView({
-behavior:"smooth"
-});
-
-});
-
-
-// Simple contact form message
-
-const form = document.querySelector("form");
-
-form.addEventListener("submit",(e)=>{
-
-e.preventDefault();
-
-alert("Message sent successfully!");
-
-form.reset();
+hero.style.backgroundPositionY = scroll * 0.5 + "px";
 
 });
